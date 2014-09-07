@@ -76,7 +76,7 @@ function onRequest ( request, response ) {
 	var file = path.basename(decodeURI(request.url));
 
 	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end("<h1>File type: " + MIME[path.extname(filetype)] + "</h1>");
+	response.end("<h1>File type: " + MIME[path.extname(file)] + "</h1>");
 }
 
 http.createServer(onRequest).listen(PORT);
