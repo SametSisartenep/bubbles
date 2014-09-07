@@ -1,48 +1,10 @@
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
+var mime = require('./mime-types');
+var htst = require('./http-stats');
 
 var PORT = 1337;
-var MIME = {
-	// CODE
-	'.html' : 'text/html',
-	'.htm' : 'text/html',
-	'.stm' : 'text/html',
-	'.css' : 'text/css',
-	'.js' : 'application/javascript',
-	// FILES
-	'.gtar' : 'application/x-gtar',
-	'.gz' : 'application/x-gzip',
-	'.pdf' : 'application/x-pdf',
-	'.tar' : 'application/x-tar',
-	'.tgz' : 'application/x-compressed',
-	'.z' : 'application/x-compress',
-	'.zip' : 'application/zip',
-	// IMAGE
-	'.gif' : 'image/gif',
-	'.ico' : 'image/x-icon',
-	'.jpe' : 'image/jpeg',
-	'.jpeg' : 'image/jpeg',
-	'.jpg' : 'image/jpeg',
-	'.svg' : 'image/svg+xml',
-	'.tif' : 'image/tiff',
-	'.tiff' : 'image/tiff',
-	'.png' : 'image/png',
-	// AUDIO
-	'.mid' : 'audio/mid',
-	'.rmi' : 'audio/mid',
-	'.mp3' : 'audio/mpeg',
-	'.wav' : 'audio/x-wav',
-	// VIDEO
-	'.mov' : 'video/quicktime',
-	'.mp2' : 'video/mpeg',
-	'.mpa' : 'video/mpeg',
-	'.mpe' : 'video/mpeg',
-	'.mpeg' : 'video/mpeg',
-	'.mpg' : 'video/mpeg',
-	'.qt' : 'video/quicktime'
-
-};
 
 function Time () { this.now = new Date(); }
 
@@ -76,7 +38,7 @@ function onRequest ( request, response ) {
 	var file = path.basename(decodeURI(request.url));
 
 	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end("<h1>File type: " + MIME[path.extname(file)] + "</h1>");
+	response.end("<h1>File type: " + mime.getMIME(path.extname(file)) + "</h1>");
 }
 
 http.createServer(onRequest).listen(PORT);
