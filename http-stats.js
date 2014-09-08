@@ -85,6 +85,8 @@ HTTP = {
 };
 
 module.exports.getStatusCode = function ( status, tiny ) {
+	tiny = typeof tiny === 'undefined' ? true : tiny;
+	
 	if (tiny)
 	{
 		return TINYHTTP[status];
