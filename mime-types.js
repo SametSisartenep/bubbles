@@ -39,15 +39,19 @@ var MIME = {
 
 };
 
+function error ( message ) {
+	this.message = typeof message === 'string' ? message : message.toString();
+}
+
 module.exports.getMIME = function ( file_extension ) {
 	if (file_extension.length > 5)
 	{
-		throw file_extension + " doesn't exist";
+		throw error(file_extension + " doesn't exist");
 		return;
 	}
 	if (file_extension === "" || file_extension === " ")
 	{
-		throw "No extension defined";
+		throw error("No extension defined");
 		return;
 	}
 

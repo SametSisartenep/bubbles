@@ -36,10 +36,8 @@ Time.prototype = {
 };
 
 function onRequest ( request, response ) {
-	var file = path.basename(decodeURI(request.url));
-
-	response.writeHead(200, {'Content-Type': 'text/html'});
-	response.end("<h1>File type: " + mime.getMIME(path.extname(file)) + "</h1>");
+	var file = decodeURI(request.url);
+	file = file === "/" ? "." + file : file;
 }
 
 module.exports.start = function () {
