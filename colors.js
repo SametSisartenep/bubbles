@@ -10,37 +10,41 @@ var COLOR = {
 	reset: "\033[0m"
 }
 
+function paint ( text, color ) {
+	return color + text + COLOR.reset;
+}
+
 module.exports.load = function () {
 	// COLORS
 	String.prototype.black = function () {
-		return COLOR.black + this + COLOR.reset;
+		return paint(this, COLOR.black);
 	}
 
 	String.prototype.white = function () {
-		return COLOR.white + this + COLOR.reset;
+		return paint(this, COLOR.white);
 	}
 
 	String.prototype.red = function () {
-		return COLOR.red + this + COLOR.reset;
+		return paint(this, COLOR.red);
 	}
 
 	String.prototype.green = function () {
-		return COLOR.green + this + COLOR.reset;
+		return paint(this, COLOR.green);
 	}
 
 	String.prototype.yellow = function () {
-		return COLOR.yellow + this + COLOR.reset;
+		return paint(this, COLOR.yellow);
 	}
 
 	String.prototype.blue = function () {
-		return COLOR.blue + this + COLOR.reset;
+		return paint(this, COLOR.blue);
 	}
 
 	String.prototype.magenta = function () {
-		return COLOR.magenta + this + COLOR.reset;
+		return paint(this, COLOR.magenta);
 	}
 
 	String.prototype.cyan = function () {
-		return COLOR.cyan + this + COLOR.reset;
+		return paint(this, COLOR.cyan);
 	}
 }
