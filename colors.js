@@ -47,4 +47,28 @@ module.exports.load = function () {
 	String.prototype.cyan = function () {
 		return paint(this, COLOR.cyan);
 	}
+	// STYLES
+	String.prototype.bold = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[1;");
+	}
+
+	String.prototype.dim = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[2;");	
+	}
+
+	String.prototype.underscore = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[4;");
+	}
+
+	String.prototype.blink = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[5;");
+	}
+
+	String.prototype.reverse = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[7;");
+	}
+
+	String.prototype.invisible = function () {
+		return this.replace(new RegExp("[\[][0-9][;]"), "[8;");
+	}
 }
