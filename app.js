@@ -1,6 +1,4 @@
-var mime = require('./mime-types');
-var htst = require('./http-stats');
-var colors = require('./colors');
+var utils = require('./utils');
 var http = require('http');
 var path = require('path');
 var fs = require('fs');
@@ -8,35 +6,7 @@ var fs = require('fs');
 var PORT = 1337;
 var IP = '127.0.0.1';
 
-function Time () { this.now = new Date(); }
-
-Time.prototype = {
-	day: function () {
-		var d = this.now.getDate();
-		return d < 10 ? '0' + d : d;
-	},
-	month: function () {
-		var m = this.now.getMonth();
-		return m < 10 ? '0' + m : m;
-	},
-	year: function () {
-		return this.now.getFullYear();
-	},
-	hour: function () {
-		var hh = this.now.getHours();
-		return hh < 10 ? '0' + hh : hh;
-	},
-	minute: function () {
-		var mm = this.now.getMinutes();
-		return mm < 10 ? '0' + mm : mm;
-	},
-	second: function () {
-		var ss = this.now.getSeconds();
-		return ss < 10 ? '0' + ss : ss;
-	}
-};
-
-colors.load();
+utils.loadColors();
 
 function onRequest ( request, response ) {
 	var file = decodeURI(request.url);
@@ -54,7 +24,7 @@ function onRequest ( request, response ) {
 			fs.stat(file, function ( err, stats ) {
 				if (err)
 				{
-					response.writeHead(htst.getStatusCode("INTSRVERR"), {"Content-Type": 'text/html'});
+					response.writeHead(utils.getStatusCode("INTSRVERR"), {"Content-Type": 'text/html'});
 					response.end("<h1>Error (500): Internal Server Error.</h1>");
 					console.log(("It couldn't get stats for " + file + " (500).").red());
 					return;
@@ -78,13 +48,13 @@ function onRequest ( request, response ) {
 				fs.readFile(file, function ( err, data ) {
 					if (err)
 					{
-						response.writeHead(htst.getStatusCode("INTSRVERR"), {"Content-Type": 'text/html'});
+						response.writeHead(utils.getStatusCode("INTSRVERR"), {"Content-Type": 'text/html'});
 						response.end("<h1>Error (500): Internal Server Error</h1>");
 						console.log(("Error reading " + file + " .Try again.").red());
 						return;
 					}
 
-					response.writeHead(htst.getStatusCode("OK"), {"Content-Type": mime.getMIME(path.extname(basefile))});
+					response.writeHead(utils.getStatusCode("OK"), {"Content-Type": utils.getMIME(path.extname(basefile))});
 					response.end(data);
 					console.log(("File: " + file + " correctly sent.").green());
 				});
@@ -92,7 +62,7 @@ function onRequest ( request, response ) {
 			return;
 		}
 
-		response.writeHead(htst.getStatusCode("NOTFOUND"), {"Content-Type": 'text/html'});
+		response.writeHead(utils.getStatusCode("NOTFOUND"), {"Content-Type": 'text/html'});
 		response.end("<h1>Error (404): " + basefile + " Not Found</h1>");
 		console.log(("Error loading " + file + " (404).").red());
 	});
