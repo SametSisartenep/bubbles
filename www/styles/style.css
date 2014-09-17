@@ -1,0 +1,33 @@
+body
+{
+	background-color: #292DD7;
+	margin: 0;
+}
+h1
+{
+	color: #FFF;
+	text-align: center;
+	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
+}
+a
+{
+	color: #FFF;
+	margin-left: 5%;
+	text-decoration: none;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+	position: relative;
+}
+nav
+{
+	text-align: center;
+	margin-right: 40px;
+}
+nav ul
+{
+	list-style: none;
+}
+ul li
+{
+	display: inline-block;
+	color: #FFF;
+}
