@@ -9,25 +9,35 @@ h1
 	text-align: center;
 	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
 }
-a
+a#go
 {
 	color: #FFF;
+	font-family: Monaco;
 	margin-left: 5%;
+	position: relative;
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
-	position: relative;
+}
+li a
+{
+	color: #FFF;
+	text-decoration: none;
 }
 nav
 {
-	text-align: center;
-	margin-right: 40px;
+	font-family: LucidaGrande;
+	text-align: right;
 }
 nav ul
 {
 	list-style: none;
+	margin-right: 10px;
 }
 ul li
 {
-	display: inline-block;
+	border-radius: 10px;
 	color: #FFF;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px;
 }
