@@ -1,0 +1,6 @@
+{
+	"name" : "bubbles",
+	"version" : "0.1.5",
+	"description" : "Virtual Reality environments with Node.js and Three.js",
+	"dependencies" : {}
+}

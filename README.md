@@ -5,7 +5,7 @@ Virtual Reality environments with Node.js and Three.js.
 
 #### LICENSE
 
-BSD clause-2 copyright (c) 2014, Samet Sisartenep
+BSD clause 3 copyright (c) 2014, Bubble's Team
 
 #### -----------------Software--------------------
 
