@@ -2,13 +2,13 @@
   "name": "bubbles",
   "version": "0.1.5",
   "description": "Virtual Reality environments with Node.js and Three.js",
-  "author": "Rodrigo González López <rodrigosloop@gmail.com>",
+  "author": "Bubble's Team",
   "repository": {
     "type": "git",
     "url": "https://github.com/SametSisartenep/threenode-vr"
   },
   "scripts": {
-    "start": "nodejs server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "socket.io": "^1.1.0"

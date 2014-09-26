@@ -1,11 +1,27 @@
 $(document).ready(function() {
+
+	function loadModel() {
+  		var loader = new THREE.JSONLoader();
+  		loader.load("res/models/monkey.js",function(model) {
+  			var monkeyMaterial = new THREE.MeshLambertMaterial({color: 0xFF00FF});
+
+    		var monkey = new THREE.Mesh(model, monkeyMaterial);
+    		monkey.position.x = 0;
+    		monkey.position.y = 0;
+    		monkey.position.z = 0;
+    		monkey.scale = new THREE.Vector3(3, 3, 3);
+
+    		scene.add(monkey);
+  		});
+	}
+
 	var scene = new THREE.Scene();
 
 	var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 	//var renderer = new THREE.CanvasRenderer();
 	var renderer = new THREE.WebGLRenderer();
-	renderer.setClearColorHex(0xEEEEEE, 1.0);
+	renderer.setClearColor(0xEEEEEE, 1.0);
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	renderer.shadowMapEnabled = true;
 
@@ -26,7 +42,7 @@ $(document).ready(function() {
 
 	scene.add(plane);
 
-	var cubeGeometry = new THREE.CubeGeometry(4, 4, 4);
+	var cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
 	var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000, wireframe: false});
 	var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
@@ -49,6 +65,8 @@ $(document).ready(function() {
 	sphere.castShadow = true;
 
 	scene.add(sphere);
+
+	loadModel();
 
 	var spotLight = new THREE.SpotLight(0xffffff);
 	spotLight.position.set(-40, 60, -10);

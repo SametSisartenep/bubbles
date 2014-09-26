@@ -24,6 +24,9 @@ Time.prototype = {
 	second: function () {
 		var ss = this.now.getSeconds();
 		return ss < 10 ? '0' + ss : ss;
+	},
+	log: function () {
+		return (this.day() + "/" + this.month() + "/" + this.year() + "|" + this.hour() + ":" + this.minute() + ":" + this.second());
 	}
 };
 

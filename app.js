@@ -10,13 +10,13 @@ utils.loadColors();
 
 function onRequest ( request, response ) {
 	var file = decodeURI(request.url);
-	file = file === "/" ? 'www/index.html' : './www' + file;
+	file = file === "/" ? './www/index.html' : './www' + file;
 
 	var basefile = path.basename(file) || 'index.html';
 
 	var cliIP = request.connection.remoteAddress;
 
-	console.log("[" + cliIP.yellow() + "] requests file: " + file);
+	console.log(utils.getTime().log().blue() + " - " + "[" + cliIP.yellow() + "] requests file: " + file);
 
 	fs.exists(file, function ( exists ) {
 		if (exists)
@@ -70,5 +70,5 @@ function onRequest ( request, response ) {
 
 module.exports.start = function () {
 	http.createServer(onRequest).listen(PORT);
-	console.log(("Server started at \"http://" + IP + ":" + PORT + "\"").cyan());
+	console.log(("Server started at \"http://" + IP + ":" + PORT + "\" on " + utils.getTime().log().blue()).cyan());
 }
