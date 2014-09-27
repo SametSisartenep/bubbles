@@ -1,24 +1,81 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title>Bubbles</title>
 		<link rel="icon" type="image/png" href="favicon.png">
-		<script type="text/javascript" src="libs/three.js/build/three.min.js"></script>
-		<script type="text/javascript" src="libs/three.js/src/loaders/JSONLoader.js"></script>
-		<script type="text/javascript" src="libs/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="res/styles/fonts.css">
+		<script src="libs/three.js/build/three.min.js"></script>
+		<script src="libs/dat.gui.min.js"></script>
+		<script src="libs/stats.js/build/stats.min.js"></script>
+		<script src="libs/three.js/src/loaders/JSONLoader.js"></script>
+		<script src="libs/jquery.min.js"></script>
 		<style type="text/css">
 		body
 		{
 			margin: 0;
 			overflow: hidden;
 		}
+		div#form
+		{
+			background-color: #2B7370;
+			border-radius: 10px 0 0 0;
+			bottom: 0;
+			color: #FFF;
+			font-family: Monaco;
+			padding: 5px;
+			position: absolute;
+			right: 0;
+			width: 25%;
+			z-index: 1;
+		}
+		div#mute
+		{
+			position: absolute;
+			z-index: 1;
+			bottom: 5px;
+			left: 5px;
+		}
+		form button
+		{
+			width: 100%;
+			border-radius: 
+		}
+		div#form input
+		{
+			border: 1px solid #999;
+			border-radius: 5px;
+			font-family: sans-serif;
+			font-size: 32px;
+			padding: 5px;
+			width: 95%;
+		}
+		h3#form-title
+		{
+			margin: 5px;
+			text-align: center;
+		}
 		</style>
 		<script type="text/javascript" src="res/scripts/3core.js"></script>
 	</head>
 	<body>
+		<audio id="home-music" src="res/music/background.mp3" autoplay></audio>
 		<div id="WebGL-output">
-			
+			<div id="form">
+				<h3 id="form-title">Registration</h3>
+				<form>
+					<input type="text" id="name" name="name" placeholder="Name" required /><br />
+					<input type="text" id="surname" name="surname" placeholder="Surname" required /><br />
+					<label>Birth date:</label><br />
+					<input type="date" id="birth" name="birth" required /><br />
+					<label>E-mail:</label><br />
+					<input type="email" name="email" placeholder="your@mail.com" required /><br />
+					<button>Go!</button>
+				</form>
+			</div>
+			<div id="mute">
+				<img src="res/images/mute-sound-light.png" width="16" height="16" />
+			</div>
 		</div>
 	</body>
 </html>
