@@ -1,4 +1,4 @@
-threenode-vr
+Bubbles
 ============
 
 Virtual Reality environments with Node.js and Three.js.
