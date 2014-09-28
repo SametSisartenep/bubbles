@@ -5,12 +5,14 @@ $(document).ready(function() {
 		{
 			$('#mute img').attr('src', 'res/images/mute-sound-light.png');
 			$('#mute img').removeClass('clicked');
+			$('#sound-info').text('ON');
 			document.getElementById('home-music').play();
 		}
 		else
 		{
 			$('#mute img').attr('src', 'res/images/play-sound-light.png');
 			$('#mute img').addClass('clicked');
+			$('#sound-info').text('OFF');
 			document.getElementById('home-music').pause();
 		}
 	});
