@@ -1,20 +1,47 @@
 $(document).ready(function() {
 
-	$('#mute img').click(function () {
-		if ($('#mute img').hasClass('clicked'))
+	(function($)
+	{
+    	$.fn.removeStyle = function(style)
+    	{
+    	    var search = new RegExp(style + '[^;]+;?', 'g');
+
+    	    return this.each(function()
+    	    {
+    	        $(this).attr('style', function(i, style)
+    	        {
+    	            return style.replace(search, '');
+    	        });
+    	    });
+    	};
+	}(jQuery));
+
+	var music_control = $('#sound-control img');
+
+	music_control.click(function () {
+		if (music_control.hasClass('clicked'))
 		{
-			$('#mute img').attr('src', 'res/images/mute-sound-light.png');
-			$('#mute img').removeClass('clicked');
+			music_control.attr('src', 'res/images/mute-sound-light.png');
+			music_control.removeClass('clicked');
+			music_control.removeAttr('class');
 			$('#sound-info').text('ON');
 			document.getElementById('home-music').play();
 		}
 		else
 		{
-			$('#mute img').attr('src', 'res/images/play-sound-light.png');
-			$('#mute img').addClass('clicked');
+			music_control.attr('src', 'res/images/play-sound-light.png');
+			music_control.addClass('clicked');
 			$('#sound-info').text('OFF');
 			document.getElementById('home-music').pause();
 		}
+	});
+
+	music_control.mouseenter(function () {
+		music_control.animate({width: "36px", height: "36px"}, 'fast');
+	}).mouseleave(function () {
+		music_control.animate({width: "24px", height: "24px"}, 'fast', function () {
+			music_control.removeAttr('style');
+		});
 	});
 
 	init();
