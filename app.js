@@ -8,7 +8,7 @@ var IP = '127.0.0.1';
 
 utils.loadColors();
 
-function onRequest ( request, response ) {
+function loadGET ( request, response ) {
     var file = decodeURI(request.url);
     file = file === '/' ? './www/index.html' : './www' + file;
 
@@ -71,7 +71,23 @@ function onRequest ( request, response ) {
     });
 }
 
+function handleMethod ( request, response ) {
+    if (request.method === 'GET')
+    {
+        console.log(('<GET>').yellow());
+        loadGET(request, response);
+    }
+    else if (request.method === 'POST')
+    {
+        console.log(('This HTTP POST handler is under construction.').yellow());
+    }
+    else
+    {
+        console.error(('Error handling HTTP Method: Unknown.').red());
+    }
+}
+
 module.exports.start = function () {
-    http.createServer(onRequest).listen(PORT);
+    http.createServer(handleMethod).listen(PORT);
     console.log(('Server started at \'http://' + IP + ':' + PORT + '\' on ' + utils.getTime().log().blue()).cyan());
 };

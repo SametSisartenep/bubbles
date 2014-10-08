@@ -74,9 +74,8 @@ var TINYHTTP = {
     'UNAVAILSRV' : 503,
     'GATETIMEOUT' : 504,
     'HTTPNOTSUP' : 505
-};
-
-var HTTP = {
+},
+HTTP = {
     'CONTINUE' : 100,
     'SWITCHPROTO' : 101,
     'OK' : 200,
@@ -189,15 +188,15 @@ module.exports.getMIME = function ( file_extension ) {
 };
 
 var COLOR = {
-    black: '\033[0;30m',
-    white: '\033[0;37m',
-    red: '\033[0;31m',
-    green: '\033[0;32m',
-    yellow: '\033[0;33m',
-    blue: '\033[0;34m',
-    magenta: '\033[0;35m',
-    cyan: '\033[0;36m',
-    reset: '\033[0m'
+    black: '\x1b[0;30m',
+    white: '\x1b[0;37m',
+    red: '\x1b[0;31m',
+    green: '\x1b[0;32m',
+    yellow: '\x1b[0;33m',
+    blue: '\x1b[0;34m',
+    magenta: '\x1b[0;35m',
+    cyan: '\x1b[0;36m',
+    reset: '\x1b[0m'
 };
 
 function paint ( text, color ) {
