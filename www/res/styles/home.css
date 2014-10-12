@@ -1,57 +1,57 @@
 body
 {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 div#form
 {
-    background-color: #057975;
-    border: 2px solid #E4FAFC;
-    border-radius: 10px 0 0 0;
-    bottom: 0;
-    color: #C4E3FC;
-    font-family: Monaco;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    width: 25%;
-    z-index: 1;
+  background-color: #057975;
+  border: 2px solid #E4FAFC;
+  border-radius: 10px 0 0 0;
+  bottom: 0;
+  color: #C4E3FC;
+  font-family: Monaco;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  width: 25%;
+  z-index: 1;
 }
 div#sound-control
 {
-    color: #FFF;
-    position: absolute;
-    z-index: 1;
-    bottom: 5px;
-    left: 5px;
+  color: #FFF;
+  position: absolute;
+  z-index: 1;
+  bottom: 5px;
+  left: 5px;
 }
 div#sound-control img
 {
-    cursor: pointer;
+  cursor: pointer;
 }
 div#form input
 {
-    border: 1px solid #999;
-    border-radius: 10px;
-    font-family: sans-serif;
-    font-size: 32px;
-    padding: 5px;
-    width: 95%;
+  border: 1px solid #999;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-size: 32px;
+  padding: 5px;
+  width: 95%;
 }
 h3#form-title
 {
-    margin: 5px;
-    text-align: center;
+  margin: 5px;
+  text-align: center;
 }
 button#go
 {
-    border-radius: 10px;
-    font-family: sans-serif;
-    font-size: 28px;
-    width: 100%;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-size: 28px;
+  width: 100%;
 }
 span#sound-info
 {
-    font-family: sans-serif;
-    font-size: 9px;
+  font-family: sans-serif;
+  font-size: 9px;
 }
