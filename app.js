@@ -1,10 +1,13 @@
-var utils = require('./utils');
-var http = require('http');
-var path = require('path');
-var fs = require('fs');
+// Modules
+var utils = require('./utils'),
+  http = require('http'),
+  qs = require('querystring'),
+  path = require('path'),
+  fs = require('fs');
 
-var PORT = 1337;
-var IP = '127.0.0.1';
+// Global variables
+var PORT = 1337,
+  IP = '127.0.0.1';
 
 utils.loadColors();
 
@@ -71,15 +74,44 @@ function loadGET ( request, response ) {
   });
 }
 
+function loadPOST ( request, response ) {
+  var requestBody = '';
+
+  request.on('data', function (data) {
+    requestBody += data;
+
+    if (requestBody.length > 1e7)
+    {
+      response.writeHead(utils.getStatusCode('REQENTLARG'), 'Request Entity Too Large', {'Content-Type' : 'text/html'});
+      response.end('<h1>Error (413): Request Entity Too Large.</h1>');
+      console.log('Error while processing POST data (413).'.red());
+    }
+  });
+
+  request.on('end', function () {
+    var formData = qs.parse(requestBody);
+    console.log(('Received data: ' + requestBody).cyan());
+
+    response.writeHead(utils.getStatusCode('OK'), {'Content-Type' : 'text/html'});
+    response.write('<h1>POST handling still under construction.</h1>');
+    response.write('<p> Your name: ' + formData.name + '</p>');
+    response.write('<p> Your surname: ' + formData.surname + '</p>');
+    response.write('<p> Your birthdate: ' + formData.birth + '</p>');
+    response.write('<p> Your email: ' + formData.email + '</p>');
+    response.end('<p> Your sex: ' + formData.sex + '</p>');
+  });
+}
+
 function handleMethod ( request, response ) {
   if (request.method === 'GET')
   {
-    console.log(('<GET>').yellow());
+    console.log('<GET>'.yellow());
     loadGET(request, response);
   }
   else if (request.method === 'POST')
   {
-    console.log(('This HTTP POST handler is under construction.').yellow());
+    console.log('<POST>'.yellow());
+    loadPOST(request, response);
   }
   else
   {
