@@ -19,7 +19,7 @@ function loadGET ( request, response ) {
 
   var cliIP = request.connection.remoteAddress;
 
-  console.log(utils.getTime().log().blue() + ' - ' + '[' + cliIP.yellow() + '] requests file: ' + file);
+  console.log('[' + cliIP.yellow() + '] requests file: ' + file);
 
   fs.exists(file, function ( exists ) {
     if (exists)
@@ -103,14 +103,14 @@ function loadPOST ( request, response ) {
 }
 
 function handleMethod ( request, response ) {
+  console.log(('<'+request.method+'>' + utils.getTime().log().blue()).yellow());
+
   if (request.method === 'GET')
   {
-    console.log('<GET>'.yellow());
     loadGET(request, response);
   }
   else if (request.method === 'POST')
   {
-    console.log('<POST>'.yellow());
     loadPOST(request, response);
   }
   else
