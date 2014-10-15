@@ -115,7 +115,9 @@ function handleMethod ( request, response ) {
   }
   else
   {
-    console.error(('Error handling HTTP Method: Unknown.').red());
+    console.error(('Error handling HTTP Method: ' + request.method + '.').red());
+    response.writeHead(utils.getStatusCode('NOTIMPLMNT'), {'Content-Type' : 'text/html'});
+    response.end('<h1>Error (501): HTTP Method Not Implemented</h1>');
   }
 }
 
