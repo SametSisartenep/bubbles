@@ -1,7 +1,3 @@
-/*
-*   levels -> 'info', 'warn', 'error', 'INFO', 'WARN', 'ERROR'
-*/
-
 require('./color').loadColors();
 
 module.exports = exports = {
@@ -14,30 +10,30 @@ module.exports = exports = {
   logError: function ( message ) {
     console.error(message.red());
   },
-  logHTTP: function ( method, status_code, file ) {
-    if ( method < 200 && method >= 100 )
+  logHTTP: function ( method, status_code, message ) {
+    if ( status_code < 200 && status_code >= 100 )
     {
-      log(method.cyan() + status_code.blue() + file);
+      this.log(method.cyan() + ' ' + status_code.toString().blue() + ' ' + message);
     }
-    else if ( method < 300 )
+    else if ( status_code < 300 )
     {
-      log(method.cyan() + status_code.green() + file);
+      this.log(method.cyan() + ' ' + status_code.toString().green() + ' ' + message);
     }
-    else if ( method < 400 )
+    else if ( status_code < 400 )
     {
-      log(method.cyan() + status_code.yellow() + file);
+      this.log(method.cyan() + ' ' + status_code.toString().yellow() + ' ' + message);
     }
-    else if ( method < 500 )
+    else if ( status_code < 500 )
     {
-      logError(method.cyan() + status_code.red() + file);
+      this.logError(method.cyan() + ' ' + status_code.toString().red() + ' ' + message);
     }
-    else if ( method < 600 )
+    else if ( status_code < 600 )
     {
-      logError(method.cyan() + status_code.red() + file);
+      this.logError(method.cyan() + ' ' + status_code.toString().red() + ' ' + message);
     }
     else
     {
-      logError('Method ' + method + ' does not exist');
+      this.logError('Method ' + method + ' does not exist');
     }
   }
 };

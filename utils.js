@@ -26,7 +26,7 @@ module.exports = {
   logError: function ( message ) {
     logger.logError(message);
   },
-  logHTTP: function ( method, status_code, file ) {
-    logger.logHTTP(method, status_code, file);
+  logHTTP: function ( method, status_code, message ) {
+    logger.logHTTP(method, status_code, message);
   }
 };
