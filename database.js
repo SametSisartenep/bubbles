@@ -20,5 +20,18 @@ module.exports = exports = {
       utils.log('MySQL connection established. id(' + connection.threadId + ')');
     });
   },
-  query: function ( query, )
-}
+  query: function ( query ) {
+    connection.query(query, function ( error, rows, fields ) {
+      if ( err )
+      {
+        utils.logError('Error querying: ' + error.stack);
+        return {error: true};
+      }
+
+      return { rows: rows, fields: fields };
+    });
+  },
+  end: function () {
+    connection.end();
+  }
+};
