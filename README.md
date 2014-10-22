@@ -1,5 +1,4 @@
-Bubbles
-============
+![bubbles logo](bubbles.png)
 
 Virtual Reality environments with Node.js and Three.js.
 
