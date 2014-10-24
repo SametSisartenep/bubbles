@@ -8,6 +8,7 @@ var connection = mysql.createConnection({
   database: 'bubbles'
 });
 
+// USE THE 'util' MODULE PROVIDED BY NODE'S CORE, DON'T BE A JERK! /(O.o)\
 // Saves us from falling into the JSON object's claws :P
 function checkArray ( object, callback ) {
   object.length === 'undefined' || object[0] === 'undefined' ?
@@ -129,3 +130,10 @@ function update ( table, fields, values, condition ) {
 function delete ( table, condition ) {
   query('DELETE FROM ' + table + ' WHERE ' + condition);
 }
+
+module.exports = exports = {
+  connect: connect(),
+  select: select(),
+  update: update(),
+  delete: delete()
+};
