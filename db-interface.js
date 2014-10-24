@@ -69,7 +69,7 @@ function select ( table, fields, condition ) {
     return;
   }
 
-  query('SELECT ' + SET + ' FROM ' + table + ' WHERE ' + condition);
+  return query('SELECT ' + SET + ' FROM ' + table + ' WHERE ' + condition);
 }
 
 function update ( table, fields, values, condition ) {
