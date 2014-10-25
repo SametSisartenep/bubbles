@@ -69,7 +69,7 @@ module.exports = exports = {
       return;
     }
 
-    return query('SELECT ' + SET + ' FROM ' + table + ' WHERE ' + condition);
+    return this.query('SELECT ' + SET + ' FROM ' + table + ' WHERE ' + condition);
   },
   UPDATE: function ( table, fields, values, condition ) {
     var SET = '';
@@ -122,9 +122,9 @@ module.exports = exports = {
       return;
     }
 
-    query('UPDATE ' + table + ' SET ' + SET + ' WHERE ' + condition);
+    this.query('UPDATE ' + table + ' SET ' + SET + ' WHERE ' + condition);
   },
   DELETE: function ( table, condition ) {
-    query('DELETE FROM ' + table + ' WHERE ' + condition);
+    this.query('DELETE FROM ' + table + ' WHERE ' + condition);
   }
 };

@@ -15,5 +15,5 @@ Thanks to:
 
 #### ------------------------------------------------
 
-## USE
+#### USE
 Place the ["Three.js"](http://github.com/mrdoob/three.js/zipball/master) library within `www/libs/`, and name it `three.js`. Then execute `~$ npm install` and `~$ npm start`, that's all :).
