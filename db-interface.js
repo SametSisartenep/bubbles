@@ -11,10 +11,10 @@ var connection = mysql.createConnection({
 // USE THE 'util' MODULE PROVIDED BY NODE'S CORE, DON'T BE A JERK! /(O.o)\
 // Saves us from falling into the JSON object's claws :P
 function checkArray ( object, callback ) {
-  object.length === 'undefined' || object[0] === 'undefined' ?
-    null
-  :
+  if (!(object.length === 'undefined' || object[0] === 'undefined'))
+  {
     callback();
+  }
 }
 
 module.exports = exports = {
