@@ -1,19 +1,5 @@
 $(document).ready(function() {
 
-  (function($)
-  {
-    $.fn.removeStyle = function(style)
-    {
-      var search = new RegExp(style + '[^;]+;?', 'g');
-
-      return this.each(function() {
-        $(this).attr('style', function(i, style) {
-          return style.replace(search, '');
-        });
-      });
-    };
-  }(jQuery));
-
   var music_control = $('#sound-control img');
 
   music_control.click(function () {

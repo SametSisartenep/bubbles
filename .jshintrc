@@ -4,6 +4,8 @@
   "immed": true,
   "node": true,
   "strict": false,
+  "undef": true,
+  "unused": true,
   "quotmark": "single",
   "indent": 2
 }

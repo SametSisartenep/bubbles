@@ -1,6 +1,6 @@
 {
   "name": "bubbles",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "Virtual Reality environments with Node.js and Three.js",
   "author": "Bubble's Team",
   "repository": {

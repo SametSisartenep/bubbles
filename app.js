@@ -1,5 +1,6 @@
 // Modules
 var utils = require('./utils'),
+  streamer = require('./file-streamer'),
   http = require('http'),
   qs = require('querystring'),
   path = require('path'),
@@ -12,57 +13,6 @@ var  IP = '127.0.0.1',
 
 utils.loadColors();
 
-function streamFile ( file, request, response, is_big ) {
-  var stream,
-    frame;
-
-  response.writeHead(utils.getStatusCode('OK'), {
-    'Content-Type': utils.getMIME(path.extname(basefile))
-  });
-
-  if (is_big)
-  {
-    stream = fs.createReadStream(file, {bufferSize: 64 * 1024});
-  }
-  else
-  {
-    stream = fs.createReadStream(file);
-  }
-
-  stream.pipe(response);
-  utils.logHTTP(request.method, 200, file + ' ' + (new Date() - time0) + 'ms');
-}
-
-function checkFileAndServe ( file, request, response ) {
-  fs.exists(file, function ( exists ) {
-    if (exists)
-    {
-      stats(file, request, response);
-    }
-    else
-    {
-      response.writeHead(utils.getStatusCode('NOTFOUND'), {'Content-Type': 'text/html'});
-      response.end('<h1>Error (404): ' + basefile + ' Not Found</h1>');
-      utils.logHTTP(request.method, 404, file + ' ' + (new Date() - time0) + 'ms');
-    }
-  });
-}
-
-function stats ( file, request, response ) {
-  fs.stat(file, function ( err, stats ) {
-    if (err)
-    {
-      response.writeHead(utils.getStatusCode('INTSRVERR'), {'Content-Type': 'text/html'});
-      response.end('<h1>Error (500): Internal Server Error.</h1>');
-      utils.logHTTP(request.method, 500, file + ' ' + (new Date() - time0) + 'ms');
-    }
-    else
-    {
-      streamFile(file, request, response, (stats.size >= 104857600));
-    }
-  });
-}
-
 function loadGET ( request, response ) {
   var file = decodeURI(request.url);
   file = file === '/' ? './www/index.html' : './www' + file;
@@ -71,7 +21,11 @@ function loadGET ( request, response ) {
 
   //cliIP = request.connection.remoteAddress;
 
-  checkFileAndServe(file, request, response);
+  streamer.checkFileAndServe(file, {
+    request: request,
+    response: response,
+    time0: time0
+  });
 }
 
 function loadPOST ( request, response ) {
