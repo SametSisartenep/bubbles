@@ -1,54 +1,48 @@
-var COLOR = {
-  black: '\x1b[0;30m',
-  white: '\x1b[0;37m',
-  red: '\x1b[0;31m',
-  green: '\x1b[0;32m',
-  yellow: '\x1b[0;33m',
-  blue: '\x1b[0;34m',
-  magenta: '\x1b[0;35m',
-  cyan: '\x1b[0;36m',
-  reset: '\x1b[0m'
-};
+var x256 = require('x256');
 
-function paint ( text, color ) {
-  return color + text + COLOR.reset;
+function paint ( text, rgb ) {
+  return '\x1b[38;5;' + x256(rgb[0], rgb[1], rgb[2]) + 'm' + text + '\x1b[0m';
 }
 
 module.exports.loadColors = function () {
   //********** COLORS
   String.prototype.black = function () {
-    return paint(this, COLOR.black);
+    return paint(this, [0, 0, 0]);
   };
 
   String.prototype.white = function () {
-    return paint(this, COLOR.white);
+    return paint(this, [255,255,255]);
   };
 
   String.prototype.red = function () {
-    return paint(this, COLOR.red);
+    return paint(this, [255, 0, 0]);
   };
 
   String.prototype.green = function () {
-    return paint(this, COLOR.green);
+    return paint(this, [0, 255, 0]);
   };
 
   String.prototype.yellow = function () {
-    return paint(this, COLOR.yellow);
+    return paint(this, [255, 255, 0]);
   };
 
   String.prototype.blue = function () {
-    return paint(this, COLOR.blue);
+    return paint(this, [0, 0, 255]);
   };
 
   String.prototype.magenta = function () {
-    return paint(this, COLOR.magenta);
+    return paint(this, [255, 0, 255]);
   };
 
   String.prototype.cyan = function () {
-    return paint(this, COLOR.cyan);
+    return paint(this, [0, 255, 255]);
   };
+
+  String.prototype.rgb = function ( r, g, b ) {
+    return paint(this, [r, g, b]);
+  }
   //********** STYLES
-  String.prototype.bold = function () {
+  /*String.prototype.bold = function () {
     return this.replace(new RegExp('[\\[][0-9][;]'), '[1;');
   };
 
@@ -70,5 +64,5 @@ module.exports.loadColors = function () {
 
   String.prototype.invisible = function () {
     return this.replace(new RegExp('[\\[][0-9][;]'), '[8;');
-  };
+  };*/
 };
