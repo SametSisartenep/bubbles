@@ -79,5 +79,5 @@ function handleMethod ( request, response ) {
 
 module.exports.start = function ( port ) {
   http.createServer(handleMethod).listen(port);
-  console.log(('Server started at \'http://' + IP + ':' + port + '\' on ' + utils.getTime().log().blue()).cyan());
+  console.log(('Server started at \'http://' + IP + ':' + port + '\' on ' + utils.getTime().log().blue).cyan);
 };

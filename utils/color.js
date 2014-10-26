@@ -6,41 +6,41 @@ function paint ( text, rgb ) {
 
 module.exports.loadColors = function () {
   //********** COLORS
-  String.prototype.black = function () {
-    return paint(this, [0, 0, 0]);
-  };
-
-  String.prototype.white = function () {
-    return paint(this, [255,255,255]);
-  };
-
-  String.prototype.red = function () {
-    return paint(this, [255, 0, 0]);
-  };
-
-  String.prototype.green = function () {
-    return paint(this, [0, 255, 0]);
-  };
-
-  String.prototype.yellow = function () {
-    return paint(this, [255, 255, 0]);
-  };
-
-  String.prototype.blue = function () {
-    return paint(this, [0, 0, 255]);
-  };
-
-  String.prototype.magenta = function () {
-    return paint(this, [255, 0, 255]);
-  };
-
-  String.prototype.cyan = function () {
-    return paint(this, [0, 255, 255]);
-  };
-
   String.prototype.rgb = function ( r, g, b ) {
     return paint(this, [r, g, b]);
-  }
+  };
+
+  String.prototype.__defineGetter__('black', function () {
+    return this.rgb(0, 0, 0);
+  });
+
+  String.prototype.__defineGetter__('white', function () {
+    return this.rgb(255, 255, 255);
+  });
+
+  String.prototype.__defineGetter__('red', function () {
+    return this.rgb(255, 0, 0);
+  });
+
+  String.prototype.__defineGetter__('green', function () {
+    return this.rgb(0, 255, 0);
+  });
+
+  String.prototype.__defineGetter__('blue', function () {
+    return this.rgb(0, 0, 255);
+  });
+
+  String.prototype.__defineGetter__('yellow', function () {
+    return this.rgb(255, 255, 0);
+  });
+
+  String.prototype.__defineGetter__('magenta', function () {
+    return this.rgb(255, 0, 255);
+  });
+
+  String.prototype.__defineGetter__('cyan', function () {
+    return this.rgb(0, 255, 255);
+  });
   //********** STYLES
   /*String.prototype.bold = function () {
     return this.replace(new RegExp('[\\[][0-9][;]'), '[1;');
