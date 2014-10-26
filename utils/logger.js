@@ -11,23 +11,23 @@ module.exports = exports = {
     console.error(message.red());
   },
   logHTTP: function ( method, status_code, message ) {
-    if ( status_code < 200 && status_code >= 100 )
+    if (status_code < 200 && status_code >= 100)
     {
       this.log(method.cyan() + ' ' + status_code.toString().blue() + ' ' + message);
     }
-    else if ( status_code < 300 )
+    else if (status_code < 300)
     {
       this.log(method.cyan() + ' ' + status_code.toString().green() + ' ' + message);
     }
-    else if ( status_code < 400 )
+    else if (status_code < 400)
     {
       this.log(method.cyan() + ' ' + status_code.toString().yellow() + ' ' + message);
     }
-    else if ( status_code < 500 )
+    else if (status_code < 500)
     {
       this.logError(method.cyan() + ' ' + status_code.toString().red() + ' ' + message);
     }
-    else if ( status_code < 600 )
+    else if (status_code < 600)
     {
       this.logError(method.cyan() + ' ' + status_code.toString().red() + ' ' + message);
     }

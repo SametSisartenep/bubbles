@@ -8,10 +8,8 @@ var connection = mysql.createConnection({
   database: 'bubbles'
 });
 
-// TODO: USE THE 'util' MODULE PROVIDED BY NODE'S CORE, DON'T BE A JERK! /(O.o)\
-// Saves us from falling into the JSON object's claws :P
 function checkArray ( object, callback ) {
-  if (!(object.length === 'undefined' || object[0] === 'undefined'))
+  if (Array.isArray(object))
   {
     callback();
   }
@@ -20,7 +18,7 @@ function checkArray ( object, callback ) {
 module.exports = exports = {
   connect: function () {
     connection.connect(function ( error ) {
-      if ( error )
+      if (error)
       {
         utils.logError('Error connecting: ' + error.stack);
         return;
@@ -31,7 +29,7 @@ module.exports = exports = {
   },
   query: function ( query ) {
     connection.query(query, function ( error, rows, cols ) {
-      if ( error )
+      if (error)
       {
         utils.logError('Query error: ' + error.stack);
         return;
@@ -43,12 +41,12 @@ module.exports = exports = {
   SELECT: function ( table, fields, condition ) {
     var SET = '';
 
-    if ( typeof fields === 'object' )
+    if (typeof fields === 'object')
     {
       checkArray(fields, function () {
-        for ( var i = 0; i < fields.length; i++ )
+        for (var i = 0; i < fields.length; i++)
         {
-          if ( i === fields.length - 1 )
+          if (i === fields.length - 1)
           {
             SET += fields[i];
           }
@@ -74,15 +72,15 @@ module.exports = exports = {
   UPDATE: function ( table, fields, values, condition ) {
     var SET = '';
 
-    if ( typeof fields === 'object' && typeof values === 'object' )
+    if (typeof fields === 'object' && typeof values === 'object')
     {
       // If "fields" is 'Array', then check "values". If it's too, execute this lambda.
       checkArray(fields, checkArray(values, function () {
-        if ( fields.length === values.length )
+        if (fields.length === values.length)
         {
-          for ( var i = 0; i < fields.length; i++ )
+          for (var i = 0; i < fields.length; i++)
           {
-            if ( i === fields.length - 1 )
+            if (i === fields.length - 1)
             {
               SET += fields[i] + '=' + values[i];
             }
@@ -99,14 +97,14 @@ module.exports = exports = {
         }
       }));
     }
-    else if ( typeof fields === 'string' && typeof values === 'string' )
+    else if (typeof fields === 'string' && typeof values === 'string')
     {
       fields = fields.split(',');
       values = values.split(',');
 
-      for ( var i = 0; i < fields.length; i++ )
+      for (var i = 0; i < fields.length; i++)
       {
-        if ( i === fields.length - 1 )
+        if (i === fields.length - 1)
         {
           SET += fields[i] + '=' + values[i];
         }
