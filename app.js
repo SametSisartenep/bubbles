@@ -2,22 +2,20 @@
 var utils = require('./utils'),
   streamer = require('./file-streamer'),
   http = require('http'),
-  qs = require('querystring'),
-  path = require('path'),
-  fs = require('fs');
+  qs = require('querystring');
 
 // Global variables
 var  IP = '127.0.0.1',
-  basefile = '',
   time0 = 0;
 
 utils.loadColors();
 
 function loadGET ( request, response ) {
   var file = decodeURI(request.url);
-  file = file === '/' ? './www/index.html' : './www' + file;
-
-  basefile = path.basename(file) || 'index.html';
+  file = file === '/' ?
+    './www/index.html'
+  :
+    './www' + file;
 
   //cliIP = request.connection.remoteAddress;
 

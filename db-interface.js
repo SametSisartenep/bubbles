@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   database: 'bubbles'
 });
 
-// USE THE 'util' MODULE PROVIDED BY NODE'S CORE, DON'T BE A JERK! /(O.o)\
+// TODO: USE THE 'util' MODULE PROVIDED BY NODE'S CORE, DON'T BE A JERK! /(O.o)\
 // Saves us from falling into the JSON object's claws :P
 function checkArray ( object, callback ) {
   if (!(object.length === 'undefined' || object[0] === 'undefined'))
