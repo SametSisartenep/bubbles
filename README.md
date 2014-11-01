@@ -3,7 +3,6 @@
 Virtual Reality environments with Node.js and Three.js.
 
 #### LICENSE
-
 [BSD clause 3](LICENSE) copyright (c) 2014, [Bubble's Team](CONTRIBUTORS)
 
 #### -----------------Software--------------------
@@ -24,3 +23,14 @@ and
   `~$ npm start`
 
 That's all :).
+
+##### Info:
+
+We are improving our Back-End structure, so _"Bubbles"_ is gonna be halted for **1-2 weeks** :(.
+
+Check out our work (｡◕‿‿◕｡):
+
+- [Dr. Mime](https://github.com/SametSisartenep/dr-mime)
+- [Super Colors!](https://github.com/SametSisartenep/super-colors)
+- [HTTP Utilities](https://github.com/SametSisartenep/http-utilities) _(soon)_
+- [Streamoider](https://github.com/SametSisartenep/streamoider) _(soon)_
