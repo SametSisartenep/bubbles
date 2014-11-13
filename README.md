@@ -3,6 +3,7 @@
 Virtual Reality environments with Node.js and Three.js.
 
 #### LICENSE
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/SametSisartenep/bubbles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [BSD clause 3](LICENSE) copyright (c) 2014, [Bubble's Team](CONTRIBUTORS)
 
 #### -----------------Software--------------------
