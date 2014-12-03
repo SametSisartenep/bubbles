@@ -78,7 +78,7 @@ function handleMethod ( request, response ) {
 }
 
 function requestHandler ( request, response ) {
-
+  
 }
 
 module.exports.start = function ( port ) {

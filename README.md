@@ -11,9 +11,9 @@ Virtual Reality environments with Node.js and Three.js.
 #### -----------------Software--------------------
 
 Thanks to:
-- _Mr.Doob_ (Ricardo Cabello) for providing us the [**Three.js**](http://threejs.org) library.
-- _Ryan Dahl_, _Isaac Z. Schlueter_ and _Joyent_ for their event-driven, non-blocking [**Node.js**](http://nodejs.org) platform.
-- _John Resig_ for his [**jQuery**](http://jquery.com) API.
+- _@mrdoob_ (Ricardo Cabello) for providing us the [**Three.js**](http://threejs.org) library.
+- _@ry (Ryan Dahl)_, _@isaacs (Isaac Z. Schlueter)_ and _Joyent_ for their event-driven, non-blocking [**Node.js**](http://nodejs.org) platform.
+- _@jeresig (John Resig)_ for his [**jQuery**](http://jquery.com) API.
 - _Everyone_ at [**npm**](http://npmjs.org) who is writing those amazing modules! :)
 
 #### ------------------------------------------------
