@@ -9,15 +9,12 @@
 # Division of labor
 
 - Rodrigo
-  |
-  ·--- Back-end (Node.js)
-  ·--- Front-end (Javascript)
+  - Back-end (Node.js)
+  - Front-end (Javascript)
 
 - Ramón 
-  |
-  ·--- Multimedia
-  ·--- 3D modeling
+  - Multimedia
+  - 3D modeling
 
 - Christopher & Daniel
-  |
-  ·--- Front-end (HTML5 + CSS3 + Javascript & libs)
+  - Front-end (HTML5 + CSS3 + Javascript & libs)
