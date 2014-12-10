@@ -11,9 +11,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "dr-mime": "^0.6.4",
+    "http-utilities": "^1.0.0",
     "mysql": "^2.5.2",
     "socket.io": "^1.1.0",
-    "x256": "0.0.2"
+    "super-colors": "^0.6.1"
   },
   "license": "BSD-3-Clause"
 }

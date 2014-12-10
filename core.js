@@ -1,7 +1,6 @@
 // Application Core
 
 var http = require('http'),
-  qs = require('querystring'),
   fs = require('fs');
 
 var PORT = process.env.PORT || 1337;
