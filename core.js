@@ -14,8 +14,9 @@ function handleConnection ( req, res ) {
   if (req.method === 'GET') {
     for (var route in routes) {
       if (route === req.url) {
-        console.log('File: ' + req.url + ' found.');
+        console.log('File: ' + route + ' found.');
         file = routes[route];
+        break;
       } else {
         console.log('File: ' + req.url + ' not found.');
         file = false;
