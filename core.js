@@ -8,6 +8,23 @@ var PORT = process.env.PORT || 1337;
 
 var routes = require('./routes.json');
 
+function sendFile ( file, res ) {
+  fs.exists(file, function ( exist ) {
+    if (exist) {
+      fs.readFile(file, function ( err, data ) {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+      });
+
+      console.log('File: ' + file + ' correctly sent.');
+    } else {
+      console.log(file + ' not found. 404');
+      res.writeHead(404, {'Content-Type' : 'text/html'});
+      res.end('<h1>ERROR 404. File [' + file + '] NOT FOUND</h1>');
+    }
+  });
+}
+
 function handleConnection ( req, res ) {
   var file = '';
 
@@ -24,14 +41,11 @@ function handleConnection ( req, res ) {
     }
 
     if (!file) {
+      console.log(file + ' not found. 404');
       res.writeHead(404, {'Content-Type' : 'text/html'});
       res.end('<h1>ERROR 404.' + req.url + ' NOT FOUND</h1>');
     } else {
-      fs.readFile(file, function ( err, data ) {
-        res.writeHead(200, {'Content-Type' : 'text/html'});
-        res.end(data);
-      });
-      console.log('File: ' + file + ' correctly sent.');
+      sendFile(file, res);
     }
   } else if (req.method === 'POST') {
     console.log('POST request received.');
