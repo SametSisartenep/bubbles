@@ -1,11 +1,8 @@
 // Application Core
 
 var http = require('http'),
-  fs = require('fs');
-
-var PORT = process.env.PORT || 1337;
-
-var routes = require('./routes.json');
+  fs = require('fs'),
+  util = require('util');
 
 function sendFile ( file, res ) {
   fs.exists(file, function ( exist ) {
@@ -34,8 +31,9 @@ function handleConnection ( req, res ) {
         file = routes[route];
         break;
       } else {
-        console.log('File: ' + req.url + ' not found.');
-        file = false;
+        if (file) {
+          file = false;
+        }
       }
     }
 
@@ -57,8 +55,15 @@ function handleConnection ( req, res ) {
   }
 }
 
-var server = http.createServer(handleConnection);
+var AppCore = function AppCore () {
+  this.PORT = process.env.PORT || 1337;
+  this.routes = require('./routes.json');
+  this.server = {};
+};
 
-server.listen(PORT, function () {
-  console.log('Bubbles running at 127.0.0.1:' + PORT);
-});
+AppCore.prototype.start = function start ( port ) {
+  this.PORT = port;
+  this.server = http.createServer(handleConnection).listen(this.PORT, function () {
+    util.log('Bubbles running at 127.0.0.1:' + this.PORT);
+  });
+};
