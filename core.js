@@ -1,23 +1,45 @@
 // Application Core
 
 var http = require('http'),
-  qs = require('querystring');
+  qs = require('querystring'),
+  fs = require('fs');
 
 var PORT = process.env.PORT || 1337;
 
+var routes = require('./routes.json');
+
 function handleConnection ( req, res ) {
+  var file = '';
+
   if (req.method === 'GET') {
-    console.log('GET request received.');
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    res.end('<h1>Welcome!</h1>');
+    for (var route in routes) {
+      if (route === req.url) {
+        console.log('File: ' + req.url + ' found.');
+        file = routes[route];
+      } else {
+        console.log('File: ' + req.url + ' not found.');
+        file = false;
+      }
+    }
+
+    if (!file) {
+      res.writeHead(404, {'Content-Type' : 'text/html'});
+      res.end('<h1>ERROR 404.' + req.url + ' NOT FOUND</h1>');
+    } else {
+      fs.readFile(file, function ( err, data ) {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end(data);
+      });
+      console.log('File: ' + file + ' correctly sent.');
+    }
   } else if (req.method === 'POST') {
     console.log('POST request received.');
     res.writeHead(200, {'Content-Type' : 'text/html'});
-    res.end('<h1>This page is Under build</h1>');
+    res.end('<h1>This service is under development. Sorry :(</h1>');
   } else {
-    console.log(req.method + ' Not Allowed. ERROR');
+    console.log(req.method + ' request received.');
     res.writeHead(405, {'Content-Type' : 'text/html'});
-    res.end('<h1>This request couldn\'t be handle. Sorry :(</h1>');
+    res.end('<h1>ERROR 405. Method ' + req.method + ' Not Allowed</h1>');
   }
 }
 

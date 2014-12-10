@@ -1,0 +1,4 @@
+{
+  "/" : "./www/index.html",
+  "/about" : "./www/about.html"
+}
