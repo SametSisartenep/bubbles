@@ -51,6 +51,14 @@ function handleConnection ( req, res ) {
     util.log('POST request received.');
     res.writeHead(200, {'Content-Type' : 'text/html'});
     res.end('<h1>This service is under development. Sorry :(</h1>');
+  } else if (req.method === 'PUT') {
+    util.log('PUT request received.');
+    res.writeHead(200, {'Content-Type' : 'text/html'});
+    res.end('<h1>This service is under development. Sorry :(</h1>');
+  } else if (req.method === 'DELETE') {
+    util.log('DELETE request received.');
+    res.writeHead(200, {'Content-Type' : 'text/html'});
+    res.end('<h1>This service is under development. Sorry :(</h1>');
   } else {
     util.log(req.method + ' request received.');
     res.writeHead(405, {'Content-Type' : 'text/html'});
@@ -72,4 +80,3 @@ AppCore.prototype.start = function start ( port ) {
 };
 
 module.exports = exports = new AppCore();
-
