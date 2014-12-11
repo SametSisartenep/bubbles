@@ -21,22 +21,26 @@ function sendFile ( file, res ) {
   });
 }
 
+function findFileRoute ( file ) {
+  for (var route in routes) {
+    if (route === file) {
+      console.log('File: ' + route + ' found.');
+      return routes[route];
+    } else {
+      if (file) {
+        return false;
+      }
+    }
+  }
+}
+
 function handleConnection ( req, res ) {
   var file = '';
 
-  if (req.method === 'GET') {
-    for (var route in routes) {
-      if (route === req.url) {
-        console.log('File: ' + route + ' found.');
-        file = routes[route];
-        break;
-      } else {
-        if (file) {
-          file = false;
-        }
-      }
-    }
+  file = findFileRoute(req.url);
 
+  if (req.method === 'GET') {
+   
     if (!file) {
       console.log(file + ' not found. 404');
       res.writeHead(404, {'Content-Type' : 'text/html'});
@@ -56,14 +60,19 @@ function handleConnection ( req, res ) {
 }
 
 var AppCore = function AppCore () {
-  this.PORT = process.env.PORT || 1337;
+  this.PORT = 1337;
   this.routes = require('./routes.json');
   this.server = {};
 };
 
 AppCore.prototype.start = function start ( port ) {
-  this.PORT = port;
+  var self = this;
+
+  this.PORT = port || self.PORT;
   this.server = http.createServer(handleConnection).listen(this.PORT, function () {
-    util.log('Bubbles running at 127.0.0.1:' + this.PORT);
+    util.log('Bubbles running at 127.0.0.1:' + self.PORT);
   });
 };
+
+module.exports = exports = new AppCore();
+
