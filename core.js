@@ -39,12 +39,7 @@ function handleConnection ( req, res ) {
   file = findFileRoute(req.url);
 
   if (req.method === 'GET') {
-   
-    if (!file) {
-      util.log(file + ' not found. 404');
-      res.writeHead(404, {'Content-Type' : 'text/html'});
-      res.end('<h1>ERROR 404.' + req.url + ' NOT FOUND</h1>');
-    } else {
+    if (file) {
       sendFile(file, res);
     }
   } else if (req.method === 'POST') {

@@ -1,3 +1,3 @@
 var AppCore = require('./core');
 
-AppCore.start(1337);
+AppCore.start(process.env.PORT || 1337);

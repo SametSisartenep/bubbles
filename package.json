@@ -3,6 +3,24 @@
   "version": "0.0.33",
   "description": "Virtual Reality environments with Node.js and Three.js",
   "author": "Bubble's Team",
+  "contributors" : [
+    {
+      "name" : "Rodrigo González López",
+      "email" : "rodrigosloop@gmail.com"
+    },
+    {
+      "name" : "Ramón Valero Martínez",
+      "email" : "ramonvaleroalbatera@gmail.com"
+    },
+    {
+      "name" : "Christopher Escribano Salar",
+      "email" : "chrisces1998@gmail.com"
+    },
+    {
+      "name" : "Daniel Pamies Berná",
+      "email" : "danielpamiesberna@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/SametSisartenep/bubbles"

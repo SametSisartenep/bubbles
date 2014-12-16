@@ -1,4 +1,6 @@
 {
-  "/" : "./www/index.html",
-  "/about" : "./www/about.html"
+  "/" : "index.html",
+  "/res" : "res/",
+  "/libs" : "libs/",
+  "/bindex" : "bindex.html"
 }
