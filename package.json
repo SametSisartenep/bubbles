@@ -1,8 +1,8 @@
 {
   "name": "bubbles",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "Virtual Reality environments with Node.js and Three.js",
-  "author": "Bubble's Team",
+  "author": "Bubbles' Team",
   "contributors" : [
     {
       "name" : "Rodrigo González López",
@@ -26,7 +26,7 @@
     "url": "https://github.com/SametSisartenep/bubbles"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "echo \"Sorry, this command is no longer in use.\nExpect our version 0.1.0 :)\""
   },
   "dependencies": {
     "dr-mime": "^0.6.4",
