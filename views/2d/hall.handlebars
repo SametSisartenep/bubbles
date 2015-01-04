@@ -1,35 +1,24 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Formulario</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css/Formulario.css">
-    <script type="application/javascript" src="/js/form-validation.js"></script>
-  </head>
-  <body>
-    <header>
-      <img src="/bubbleslogo.jpg" width="251" height="53" alt="Burbujas" />
-    </header>
-    <img src="/img/bubbles.jpg" width="635" height="372" alt="Burbujas" />
-    <form name="frmSample" method="post" action="">
-      <label>Nombre: </label>
-        <input type="text" name="Nombre" required>
-      <label>Apellidos: </label>
-        <input type="text" name="Apellidos" required>
-      <label>Fecha de nacimiento: </label>
-        <input type="datetime" name="fecha" required>
-      <label>E-mail: </label>
-        <input type="text" name="correo" required>
-      <label>Contraseña: </label>
-        <input type="password" name="passwd" required>
-      <label>Confirmar contraseña: </label>
-        <input type="password" name="passwd2" required>
-      <label>Sexo: </label>
-        <input type="radio" name="sex" value="male" checked required>Hombre  
-        <input type="radio" name="sex" value="female" required>Mujer
-        <br>
-      <input type="button" value="Enviar" onClick="validarTodo()">
-      <input type="reset" value="Deshacer">
-    </form>
-  </body>
-</html>
+<header>
+  <img src="/bubbleslogo.jpg" width="251" height="53" alt="Burbujas" />
+</header>
+<img src="/img/bubbles.jpg" width="635" height="372" alt="Burbujas" />
+<form name="frmSample" method="post" action="">
+  <label>Nombre: </label>
+    <input type="text" name="Nombre" required>
+  <label>Apellidos: </label>
+    <input type="text" name="Apellidos" required>
+  <label>Fecha de nacimiento: </label>
+    <input type="datetime" name="fecha" required>
+  <label>E-mail: </label>
+    <input type="text" name="correo" required>
+  <label>Contraseña: </label>
+    <input type="password" name="passwd" required>
+  <label>Confirmar contraseña: </label>
+    <input type="password" name="passwd2" required>
+  <label>Sexo: </label>
+    <input type="radio" name="sex" value="male" checked required>Hombre  
+    <input type="radio" name="sex" value="female" required>Mujer
+    <br>
+  <input type="button" value="Enviar" onClick="validarTodo()">
+  <input type="reset" value="Deshacer">
+</form>

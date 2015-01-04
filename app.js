@@ -21,7 +21,7 @@ bubbles.get('/', function ( req, res ) {
 });
 
 bubbles.get('/2d', function ( req, res ) {
-  res.render('2d/hall', { layout: null });
+  res.render('2d/hall', { context2d: true });
 });
 
 bubbles.get('/bubbleslogo.jpg', function ( req, res ) {
