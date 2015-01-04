@@ -20,6 +20,15 @@ bubbles.get('/', function ( req, res ) {
   res.render('hall');
 });
 
+bubbles.get('/2d', function ( req, res ) {
+  res.render('2d/hall', { layout: null });
+});
+
+bubbles.get('/bubbleslogo.jpg', function ( req, res ) {
+  res.type('image/jpeg');
+  res.sendFile(__dirname + '/bubbles.png');
+});
+
 bubbles.use(express.static(__dirname + '/www'));
 
 bubbles.listen(bubbles.get('port'), function () {
