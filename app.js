@@ -1,8 +1,14 @@
-var express = require('express');
+var express = require('express'),
+  handlebars = require('express-handlebars').create({
+    defaultLayout: 'main'
+  });
 
 var bubbles = express();
 
 bubbles.set('port', process.env.PORT || 1337);
+
+bubbles.engine('handlebars', handlebars.engine);
+bubbles.set('view engine', 'handlebars');
 
 bubbles.use(function ( req, res, next ) {
   res.set('X-Powered-By', 'Cats After All, Inc');
@@ -12,8 +18,7 @@ bubbles.use(function ( req, res, next ) {
 
 bubbles.get('/', function ( req, res ) {
   res.type('text/html');
-  res.send('<h1>Welcome to Bubbles v0.1.0!</h1>' +
-          '<p> Well, I\'m kidding, but It\'ll be soon ;)</p>');
+  res.sendFile( __dirname + '/www/index.html');
 });
 
 bubbles.listen(bubbles.get('port'), function () {

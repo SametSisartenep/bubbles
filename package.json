@@ -26,7 +26,7 @@
     "url": "https://github.com/SametSisartenep/bubbles"
   },
   "scripts": {
-    "start": "echo \"Sorry, this command is no longer in use.\nExpect our version 0.1.0 :)\""
+    "start": "node app"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
