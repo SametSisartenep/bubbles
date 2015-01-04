@@ -17,9 +17,10 @@ bubbles.use(function ( req, res, next ) {
 });
 
 bubbles.get('/', function ( req, res ) {
-  res.type('text/html');
-  res.sendFile( __dirname + '/www/index.html');
+  res.render('hall');
 });
+
+bubbles.use(express.static(__dirname + '/www'));
 
 bubbles.listen(bubbles.get('port'), function () {
   console.log('Bubbles running at 127.0.0.1:' + bubbles.get('port'));

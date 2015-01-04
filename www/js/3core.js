@@ -5,7 +5,7 @@ $(document).ready(function() {
   music_control.click(function () {
     if (music_control.hasClass('clicked'))
     {
-      music_control.attr('src', 'res/images/mute-sound-light.png');
+      music_control.attr('src', '/img/mute-sound-light.png');
       music_control.removeClass('clicked');
       music_control.removeAttr('class');
       $('#sound-info').text('ON');
@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
     else
     {
-      music_control.attr('src', 'res/images/play-sound-light.png');
+      music_control.attr('src', '/img/play-sound-light.png');
       music_control.addClass('clicked');
       $('#sound-info').text('OFF');
       document.getElementById('home-music').pause();
@@ -98,7 +98,7 @@ $(document).ready(function() {
 
   function loadModel() {
     var loader = new THREE.JSONLoader();
-    loader.load('res/models/monkey.js',
+    loader.load('/models/monkey.js',
     function(model) {
       var material = new THREE.MeshNormalMaterial();
 
