@@ -1,24 +1,24 @@
 {
   "name": "bubbles",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Virtual Reality environments with Node.js and Three.js",
   "author": "Bubbles' Team",
-  "contributors" : [
+  "contributors": [
     {
-      "name" : "Rodrigo González López",
-      "email" : "rodrigosloop@gmail.com"
+      "name": "Rodrigo González López",
+      "email": "rodrigosloop@gmail.com"
     },
     {
-      "name" : "Ramón Valero Martínez",
-      "email" : "ramonvaleroalbatera@gmail.com"
+      "name": "Ramón Valero Martínez",
+      "email": "ramonvaleroalbatera@gmail.com"
     },
     {
-      "name" : "Christopher Escribano Salar",
-      "email" : "chrisces1998@gmail.com"
+      "name": "Christopher Escribano Salar",
+      "email": "chrisces1998@gmail.com"
     },
     {
-      "name" : "Daniel Pamies Berná",
-      "email" : "danielpamiesberna@gmail.com"
+      "name": "Daniel Pamies Berná",
+      "email": "danielpamiesberna@gmail.com"
     }
   ],
   "repository": {
@@ -28,12 +28,16 @@
   "scripts": {
     "start": "echo \"Sorry, this command is no longer in use.\nExpect our version 0.1.0 :)\""
   },
+  "license": "BSD-3-Clause",
   "dependencies": {
-    "dr-mime": "^0.6.4",
-    "http-utilities": "^1.0.0",
-    "mysql": "^2.5.2",
-    "socket.io": "^1.1.0",
-    "super-colors": "^0.6.1"
+    "body-parser": "^1.10.1",
+    "express": "^4.10.6",
+    "express-handlebars": "^1.1.0"
   },
-  "license": "BSD-3-Clause"
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cafe-mocha": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "mocha": "^2.1.0"
+  }
 }
