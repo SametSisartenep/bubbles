@@ -1,24 +1,74 @@
-<header>
-  <img src="/bubbleslogo.jpg" width="251" height="53" alt="Burbujas" />
-</header>
-<img src="/img/bubbles.jpg" width="635" height="372" alt="Burbujas" />
-<form name="frmSample" method="post" action="">
-  <label>Nombre: </label>
-    <input type="text" name="Nombre" required>
-  <label>Apellidos: </label>
-    <input type="text" name="Apellidos" required>
-  <label>Fecha de nacimiento: </label>
-    <input type="datetime" name="fecha" required>
-  <label>E-mail: </label>
-    <input type="text" name="correo" required>
-  <label>Contraseña: </label>
-    <input type="password" name="passwd" required>
-  <label>Confirmar contraseña: </label>
-    <input type="password" name="passwd2" required>
-  <label>Sexo: </label>
-    <input type="radio" name="sex" value="male" checked required>Hombre  
-    <input type="radio" name="sex" value="female" required>Mujer
-    <br>
-  <input type="button" value="Enviar" onClick="validarTodo()">
-  <input type="reset" value="Deshacer">
-</form>
+<div class="container">
+  <h2>Estás a un paso!</h2>
+  <div class="panel panel-primary">
+    <div class="panel panel-body">
+      <form class="form-horizontal" action="/register" method="post">
+        <div class="form-group">
+          <label for="fieldName" class="col-sm-2 control-label">Nombre</label>
+          <div class="col-sm-4">
+            <input type="text" id="fieldName" class="form-control"
+              name="name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldSurname" class="col-sm-2 control-label">Apellidos
+          </label>
+          <div class="col-sm-4">
+            <input type="text" id="fieldSurname" class="form-control"
+              name="surname" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldBirthdate" class="col-sm-2 control-label">
+          Fecha de nacimiento
+          </label>
+          <div class="col-sm-4">
+            <input type="date" id="fieldBirthdate" class="form-control"
+            name="birthdate" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldEmail" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-4">
+            <input type="text" id="fieldEmail" class="form-control"
+              name="email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldPassword" class="col-sm-2 control-label">Contraseña
+          </label>
+          <div class="col-sm-4">
+            <input type="password" id="fieldPassword" class="form-control"
+              name="password" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldPassConfirm" class="col-sm-2 control-label">
+          Confirmar contraseña
+          </label>
+          <div class="col-sm-4">
+            <input type="password" id="fieldPassConfirm" class="form-control"
+              name="passconfirm" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fieldSex" class="col-sm-2 control-label">Sexo</label>
+          <div class="col-sm-4">
+            <select class="form-control" id="fieldSex" name="sex" required>
+              <option value="M">Hombre</option>
+              <option value="F">Mujer</option>
+              <option value="O">Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Registrarse
+            </button>
+            <button class="btn btn-default">Comenzar de nuevo</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -5,10 +5,12 @@ Virtual Reality environments with Node.js and Three.js.
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/SametSisartenep/bubbles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Codeship Status for codeship/documentation](https://codeship.com/projects/42627170-75e8-0132-1c0d-56333483aaf8/status)](https://codeship.com/projects/55201)
 
-### Info (30/12/2014)
-We're working in our backend for the **v0.1.0**.
-At the beginning, I was learning from node.js and the way it works, so I did my own little modules that made one thing at a time, and implemented it in the backend. Now, I want to contribute to Node.js and its developers, so I chose "_Express.js_" for this project. I don't wanna build stuff that are already made, by other hand, I'd like to contribute by using those modules, made by the really pros. We have a lot to learn :)
-> By Rodrigo González López (@SametSisartenep)
+### Node.js Modules
+- [Express.js](https://github.com/strongloop/express)
+  - [Handlebars](https://github.com/ericf/express-handlebars)
+  - [Body Parser](https://github.com/expressjs/body-parser)
+- [Grunt](https://github.com/gruntjs/grunt)
+- [Mocha](https://github.com/mochajs/mocha)
 
 ### Thanks to
 

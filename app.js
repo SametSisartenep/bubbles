@@ -11,7 +11,7 @@ bubbles.engine('handlebars', handlebars.engine);
 bubbles.set('view engine', 'handlebars');
 
 bubbles.use(function ( req, res, next ) {
-  res.set('X-Powered-By', 'Cats After All, Inc');
+  res.set('X-Powered-By', 'Express.js Awesomeness');
 
   next();
 });
@@ -22,11 +22,6 @@ bubbles.get('/', function ( req, res ) {
 
 bubbles.get('/2d', function ( req, res ) {
   res.render('2d/hall', { context2d: true });
-});
-
-bubbles.get('/bubbleslogo.jpg', function ( req, res ) {
-  res.type('image/jpeg');
-  res.sendFile(__dirname + '/bubbles.png');
 });
 
 bubbles.use(express.static(__dirname + '/www'));
