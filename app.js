@@ -29,3 +29,8 @@ bubbles.use(express.static(__dirname + '/www'));
 bubbles.listen(bubbles.get('port'), function () {
   console.log('Bubbles running at 127.0.0.1:' + bubbles.get('port'));
 });
+
+process.on('SIGINT', function () {
+  console.log('Bubbles is closing...');
+  process.exit(1);
+});
