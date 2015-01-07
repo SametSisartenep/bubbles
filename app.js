@@ -20,7 +20,7 @@ bubbles.engine('handlebars', handlebars.engine);
 bubbles.set('view engine', 'handlebars');
 
 bubbles.use(function ( req, res, next ) {
-  res.set('X-Powered-By', 'Express.js Awesomeness');
+  res.set('X-Powered-By', 'Bubbles\' Team');
 
   next();
 });
@@ -31,6 +31,16 @@ bubbles.get('/', function ( req, res ) {
 
 bubbles.get('/2d', function ( req, res ) {
   res.render('2d/hall', { context2d: true });
+});
+
+bubbles.use(function ( req, res ) {
+  res.status(404);
+  res.render('404');
+});
+
+bubbles.use(function ( req, res ) {
+  res.status(500);
+  res.render('500');
 });
 
 bubbles.use(express.static(__dirname + '/www'));
