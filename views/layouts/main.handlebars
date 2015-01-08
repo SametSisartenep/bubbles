@@ -13,17 +13,21 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
       </script>
     {{else}}
-      <link rel="stylesheet" href="/css/fonts.css" />
-      <link rel="stylesheet" href="/css/home.css" />
+      {{#if error }}
+        <link rel="stylesheet" href="/css/error.css">
+      {{else}}
+        <link rel="stylesheet" href="/css/fonts.css" />
+        <link rel="stylesheet" href="/css/home.css" />
 
-      <script src="/libs/three.js/build/three.min.js"></script>
-      <script src="/libs/dat.gui.min.js"></script>
-      <script src="/libs/stats.min.js"></script>
-      <script src="/libs/three.js/src/loaders/JSONLoader.js"></script>
+        <script src="/libs/three.js/build/three.min.js"></script>
+        <script src="/libs/dat.gui.min.js"></script>
+        <script src="/libs/stats.min.js"></script>
+        <script src="/libs/three.js/src/loaders/JSONLoader.js"></script>
 
-      <script src="/libs/jquery-color.min.js"></script>
+        <script src="/libs/jquery-color.min.js"></script>
 
-      <script src="/js/3core.js"></script>
+        <script src="/js/3core.js"></script>
+      {{/if}}
     {{/if}}
     {{{ _sections.head }}}
   </head>

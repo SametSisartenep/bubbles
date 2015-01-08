@@ -1,0 +1,18 @@
+body {
+  background-color: #DB8585;
+  color: #FFF;
+  text-align: center;
+}
+#code {
+  color: #F52929;
+  font-family: Verdana;
+}
+#container {
+  border: 2px solid #702323;
+  background-color: #712626;
+  border-radius: 15px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+  font-family: sans-serif;
+  margin-left: 25%;
+  width: 50%;
+}

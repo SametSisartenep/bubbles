@@ -33,17 +33,17 @@ bubbles.get('/2d', function ( req, res ) {
   res.render('2d/hall', { context2d: true });
 });
 
+bubbles.use(express.static(__dirname + '/www'));
+
 bubbles.use(function ( req, res ) {
   res.status(404);
-  res.render('404');
+  res.render('error/404', { error: true });
 });
 
 bubbles.use(function ( req, res ) {
   res.status(500);
-  res.render('500');
+  res.render('error/500', { error: true });
 });
-
-bubbles.use(express.static(__dirname + '/www'));
 
 bubbles.listen(bubbles.get('port'), function () {
   console.log('Bubbles running at 127.0.0.1:' + bubbles.get('port'));
