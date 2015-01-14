@@ -26,7 +26,8 @@
     "url": "https://github.com/SametSisartenep/bubbles"
   },
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "test": "grunt"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
