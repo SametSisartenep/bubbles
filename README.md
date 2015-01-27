@@ -3,7 +3,9 @@
 Virtual Reality environments with Node.js and Three.js.
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/SametSisartenep/bubbles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Codeship Status for codeship/documentation](https://codeship.com/projects/42627170-75e8-0132-1c0d-56333483aaf8/status)](https://codeship.com/projects/55201)
+![Dependencies Status](https://david-dm.org/SametSisartenep/bubbles.svg)
 
 ### Node.js Modules
 - [Express.js](https://github.com/strongloop/express)
