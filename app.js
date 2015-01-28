@@ -1,4 +1,5 @@
 var express = require('express'),
+  formidable = require('formidable'),
   handlebars = require('express-handlebars').create({
     defaultLayout: 'main',
     helpers: {
@@ -33,7 +34,22 @@ bubbles.get('/2d', function ( req, res ) {
   res.render('2d/hall', { context2d: true });
 });
 
+bubbles.get('/thank-you', function ( req, res ) {
+  res.render('thank-you', { layout: null });
+});
+
 bubbles.use(express.static(__dirname + '/www'));
+
+bubbles.post('/sign-up', function ( req, res ) {
+  var form = new formidable.IncomingForm();
+  form.parse(req, function ( err, fields ) {
+    if (err) {
+
+    }
+    console.log('Received fields: ' + JSON.stringify(fields));
+    res.redirect(303, '/thank-you');
+  });
+});
 
 bubbles.use(function ( req, res ) {
   res.status(404);

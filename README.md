@@ -11,6 +11,7 @@ Virtual Reality environments with Node.js and Three.js.
 - [Express.js](https://github.com/strongloop/express)
   - [Handlebars](https://github.com/ericf/express-handlebars)
   - [Body Parser](https://github.com/expressjs/body-parser)
+- [Formidable](https://github.com/felixge/node-formidable)
 - [Grunt](https://github.com/gruntjs/grunt)
 - [Mocha](https://github.com/mochajs/mocha)
 
