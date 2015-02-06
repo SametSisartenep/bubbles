@@ -26,6 +26,8 @@ bubbles.use(function ( req, res, next ) {
   next();
 });
 
+bubbles.use(require('morgan')('dev'));
+
 bubbles.get('/', function ( req, res ) {
   res.render('hall');
 });
@@ -44,7 +46,7 @@ bubbles.post('/sign-up', function ( req, res ) {
   var form = new formidable.IncomingForm();
   form.parse(req, function ( err, fields ) {
     if (err) {
-
+      console.error('Form handling error');
     }
     console.log('Received fields: ' + JSON.stringify(fields));
     res.redirect(303, '/thank-you');

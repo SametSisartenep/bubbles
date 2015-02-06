@@ -1,3 +1,4 @@
 www/libs/three.js/
 www/engine/
 node_modules/
+*.swp
