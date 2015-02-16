@@ -22,13 +22,13 @@ bubbles.engine('handlebars', handlebars.engine);
 bubbles.set('view engine', 'handlebars');
 
 var mysql = require('./db/mysql');
-console.log(mysql.getDatabases(function ( err, results ) {
+mysql.describeUsers(function ( err, results ) {
   if (err) {
     console.error('Database error.');
     return;
   }
   console.log(results);
-}));
+});
 
 bubbles.use(function ( req, res, next ) {
   res.set('X-Powered-By', 'Bubbles\' Team');
@@ -78,6 +78,6 @@ bubbles.listen(bubbles.get('port'), function () {
 });
 
 process.on('SIGINT', function () {
-  console.log('Bubbles is closing...');
+  console.log('\nBubbles is closing...');
   process.exit(1);
 });
