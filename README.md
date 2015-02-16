@@ -8,6 +8,9 @@ Virtual Reality environments with Node.js and Three.js.
 [![Build Status](https://drone.io/github.com/SametSisartenep/bubbles/status.png)](https://drone.io/github.com/SametSisartenep/bubbles/latest)
 ![Dependencies Status](https://david-dm.org/SametSisartenep/bubbles.svg)
 
+### INFO [ 16/02/2015 ]
+Now we are based on **io.js**! -> [Check It Out!](package.json)
+
 ### Node.js Modules
 - [Express.js](https://github.com/strongloop/express)
   - [Handlebars](https://github.com/ericf/express-handlebars)
@@ -18,8 +21,8 @@ Virtual Reality environments with Node.js and Three.js.
 
 ### Thanks to
 
+- _Node Community_ (i.e **Node.js** & **io.js**)
 - _@mrdoob (Ricardo Cabello)_ for providing us the [**Three.js**](http://threejs.org) library.
-- _@ry (Ryan Dahl)_, _@isaacs (Isaac Z. Schlueter)_ and _Joyent_ for their event-driven, non-blocking [**Node.js**](http://nodejs.org) platform.
 - _@jeresig (John Resig)_ for his [**jQuery**](http://jquery.com) API.
 - _Everyone_ at [**npm**](http://npmjs.org) who is writing those amazing modules! :)
 

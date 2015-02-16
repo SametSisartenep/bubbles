@@ -1,6 +1,6 @@
 {
   "name": "bubbles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Virtual Reality environments with Node.js and Three.js",
   "author": "Bubbles' Team",
   "contributors": [
@@ -26,7 +26,7 @@
     "url": "https://github.com/SametSisartenep/bubbles"
   },
   "scripts": {
-    "start": "node app",
+    "start": "iojs app",
     "test": "grunt"
   },
   "license": "BSD-3-Clause",

@@ -22,13 +22,6 @@ bubbles.engine('handlebars', handlebars.engine);
 bubbles.set('view engine', 'handlebars');
 
 var mysql = require('./db/mysql');
-mysql.describeUsers(function ( err, results ) {
-  if (err) {
-    console.error('Database error.');
-    return;
-  }
-  console.log(results);
-});
 
 bubbles.use(function ( req, res, next ) {
   res.set('X-Powered-By', 'Bubbles\' Team');
