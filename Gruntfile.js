@@ -1,7 +1,7 @@
 module.exports = function ( grunt ) {
   grunt.initConfig({
     jshint: {
-      app: ['app.js'],
+      app: ['app.js', 'db/mysql.js'],
       qa: ['Gruntfile.js']
     }
   });

@@ -27,6 +27,8 @@ Now we are based on **io.js**! -> [Check It Out!](package.json)
 - _@jeresig (John Resig)_ for his [**jQuery**](http://jquery.com) API.
 - _Everyone_ at [**npm**](http://npmjs.org) who is writing those amazing modules! :)
 
+### [CONTRIBUTING](docs/CONTRIBUTING.md)
+
 ### LICENSE
 
 [BSD Clause 3](LICENSE) copyright (c) 2014, [Bubbles' Team](CONTRIBUTORS.md)
