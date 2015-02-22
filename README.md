@@ -16,6 +16,7 @@ Now we are based on **io.js**! -> [Check It Out!](package.json)
   - [Handlebars](https://github.com/ericf/express-handlebars)
   - [Body Parser](https://github.com/expressjs/body-parser)
 - [Formidable](https://github.com/felixge/node-formidable)
+- [MySQL](https://github.com/felixge/node-mysql)
 - [Grunt](https://github.com/gruntjs/grunt)
 - [Mocha](https://github.com/mochajs/mocha)
 

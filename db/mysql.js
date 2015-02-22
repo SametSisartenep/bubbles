@@ -31,7 +31,7 @@ module.exports.describeUsers = function ( callback ) {
       callback(true);
       return;
     }
-    connection.query('DESCRIBE users', [], function ( err, results ) {
+    connection.query('DESCRIBE Users', [], function ( err, results ) {
       connection.release();
       if (err) {
         console.error(err);
