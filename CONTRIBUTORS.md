@@ -1,20 +1,16 @@
 # Bubble's Team
 
-- José Manuel <>	# CTO (Chief Technology Officer)
+- José Manuel Aguilar Ñiguez <jmancallosa@gmail.com>
 - Rodrigo González López <rodrigosloop@gmail.com>
 - Ramón Valero Martínez <ramonvaleroalbatera@gmail.com>
-- Christopher Escribano Salar <chrisces1998@gmail.com>
-- Daniel Pamies Berná <danielpamiesberna@gmail.com>
 
 # Division of labor
 
 - Rodrigo
   - Back-end (Node.js)
-  - Front-end (Javascript)
+  - Front-end (Javascript & libs + UX)
 
-- Ramón 
+- Ramón
   - Multimedia
   - 3D modeling
-
-- Christopher & Daniel
   - Front-end (HTML5 + CSS3 + Javascript & libs)
